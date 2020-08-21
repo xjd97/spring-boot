@@ -26,11 +26,11 @@ public class TimeHandlerInterceptor implements HandlerInterceptor {
 		c.set(Calendar.SECOND, 0);
 		long start = c.getTimeInMillis();
 		//3.设置终止访问的时间
-		c.set(Calendar.HOUR_OF_DAY, 24);
+		c.set(Calendar.HOUR_OF_DAY, 18);
 		long end = c.getTimeInMillis();
 		long cTime=System.currentTimeMillis();
 		if(cTime<start||cTime>end)
-			throw new ServiceException("请在规定时间访问:0~24");
+			throw new ServiceException("请在规定时间访问:0~18");
 		return true;//代表请求是否拦截
 	}
 	//控制器方法执行之后,视图解析之前
