@@ -17,12 +17,14 @@ import com.cy.pj.sys.dao.SysRoleMenuDao;
 import com.cy.pj.sys.entity.SysMenu;
 import com.cy.pj.sys.service.SysMenuService;
 
+import javax.annotation.Resource;
+
 @Transactional
 @Service
 public class SysMenuServiceImpl implements SysMenuService{
-	@Autowired
+	@Resource
 	private SysMenuDao sysMenuDao;
-	@Autowired
+	@Resource
 	private SysRoleMenuDao sysRoleMenuDao;
 	
 	/**
