@@ -8,10 +8,12 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-public class IPUtils {
+import java.util.Objects;
+
+ public class IPUtils {
 	private static Logger logger = LoggerFactory.getLogger(IPUtils.class);
 	public static String getIpAddr() {
-		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+		HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
 			String ip = null;
 			try {
 				ip = request.getHeader("x-forwarded-for");
