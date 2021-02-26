@@ -1,0 +1,25 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    url: jdbc:mysql://47.100.7.202/eiotyun_parent?useSSL=false&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: eiotYun@123
+    hikari:
+      auto-commit: false
+  jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      open-in-view: false
+  redis:
+    host: 47.100.7.202
+    port: 6379
+    database: 3
+    password: redis-ejlchina-123
+bean-searcher:
+  packages: com.ejlchina.project.entity
+logging:
+  level:
+    web: INFO
+
